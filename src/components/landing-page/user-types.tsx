@@ -20,7 +20,7 @@ export default function UsersTypes() {
   return (
     <div className="flex justify-center">
       <div className="max-w-7xl w-full mx-auto flex flex-col lg:flex-row gap-3">
-        <div className="flex-4 flex flex-row grow items-center">
+        <div className="flex-4 flex flex-row grow items-center ">
           <div className="flex flex-col items-start">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-left">
               AI for Financial <br/>Workflows.
@@ -30,7 +30,8 @@ export default function UsersTypes() {
             </p>
           </div>
         </div>
-        <div className="flex-3">
+        <div className="flex-3 relative">
+        <div className="absolute m-auto blur-[250px] h-[8rem] right-[-200px] inset-0 bg-[#0b00ff]"></div>
           <div className="grid gap-3">
             {userTypes.map((item, index) => (
               <div 

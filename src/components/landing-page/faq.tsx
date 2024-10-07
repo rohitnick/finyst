@@ -31,8 +31,8 @@ export default function FAQ() {
   return (
     <Card className="w-full mx-auto px-8 py-12 bg-transparent">
       <CardHeader className="text-center p-0">
-        <CardTitle className="text-3xl font-bold mb-2">Everything you need to know</CardTitle>
-        <p className="text-muted-foreground">Here are the questions most people always ask about.</p>
+        <CardTitle className="text-4xl font-bold mb-2">Everything you need to know</CardTitle>
+        <p className="text-muted-foreground text-xl">Here are the questions most people always ask about.</p>
       </CardHeader>
       <CardContent className="p-0 mt-11">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-11 text-left">

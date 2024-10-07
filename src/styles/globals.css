@@ -33,7 +33,7 @@
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
+    --background: 233 75% 5%;
     --foreground: 228 100% 96%;
     --card: 233 41% 9%;
     --card-foreground: 228 100% 96%;
@@ -77,4 +77,10 @@
     font-display: swap;
     src: url(/fonts/Roboto-Regular.woff2) format('woff2');
   }
+}
+
+@layer components {
+    .accordion::-webkit-details-marker {
+        display: none;
+    }
 }
