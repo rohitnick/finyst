@@ -51,8 +51,8 @@ export default function LandingPage() {
             <footer className='mt-20'>
               <div className="border-t flex justify-between items-center py-10">
                 <div className="flex space-x-4 items-center">
-                  <Link href="#" className="p-3 border rounded-full bg-card"><LinkedinIcon className="h-4" /></Link>
-                  <Link href="#" className="p-3 border rounded-full bg-card"><DiscordIcon className="h-4" /></Link>
+                  <Link href="https://www.linkedin.com/company/finyst-ai/" className="p-3 border rounded-full bg-card"><LinkedinIcon className="h-4" /></Link>
+                  <Link href="https://discord.gg/QHCGPrn3" className="p-3 border rounded-full bg-card"><DiscordIcon className="h-4" /></Link>
                 </div>
                 <div className="text-right">
                   Finyst © 2024 All rights reserved.

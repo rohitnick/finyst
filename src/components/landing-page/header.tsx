@@ -8,7 +8,6 @@ import { SunIcon, MoonIcon, HamburgerMenuIcon } from "@radix-ui/react-icons"
 
 import { Button } from "@/components/ui/button"
 import { Logo } from "@/components/ui/icons"
-import { googleFormLink } from "@/lib/constants";
 
 export default function Header() {
     const [theme, setTheme] = useState('dark')
@@ -55,11 +54,9 @@ export default function Header() {
                 <Button onClick={toggleTheme} variant="ghost" size="icon">
                     {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
                 </Button>
-                <Link target="_blank" href={googleFormLink}>
-                    <Button variant="outline" size="lg" className='hidden bg-transparent md:inline-flex rounded-full border'>
-                        Get Started
-                    </Button>
-                </Link>
+                <Button variant="outline" size="lg" className='hidden bg-transparent md:inline-flex rounded-full border'>
+                    Coming Soon
+                </Button>
                 <Button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden" variant="ghost" size="icon">
                     <HamburgerMenuIcon className="h-5 w-5" />
                 </Button>
@@ -71,11 +68,9 @@ export default function Header() {
                 <Link href="#" className="block hover:text-yellow-500">Discord</Link>
                 <Link href="#" className="block hover:text-yellow-500">Slack</Link>
                 <Link href="#" className="block hover:text-yellow-500">Contact</Link> */}
-                <Link target="_blank" href={googleFormLink}>
-                    <Button variant="outline">
-                        Get Started
-                    </Button>
-                </Link>
+                <Button variant="outline">
+                    Coming Soon
+                </Button>
             </nav>
             )}
 

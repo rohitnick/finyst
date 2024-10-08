@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "../ui/textarea";
 import { Card, CardContent } from "@/components/ui/card"
-import { googleFormLink } from "@/lib/constants";
 
 export default function HeroAction() {
     const [email, setEmail] = useState('');
@@ -20,7 +19,7 @@ export default function HeroAction() {
 
     const handleEmailSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        
+
         if (!validateEmail(email)) {
             setMessage("Please enter a valid email address.");
             return;
@@ -85,11 +84,11 @@ export default function HeroAction() {
             <CardContent className="p-6 md:p-10 border rounded-3xl shadow-md">
                 {step === 1 && (
                     <form onSubmit={handleEmailSubmit}>
-                        <Input 
+                        <Input
                             onChange={(e: { currentTarget: { value: string; }; }) => setEmail(e.currentTarget.value)} 
                             type="email" 
                             className="mb-4 text-center text-md border-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:placeholder:text-transparent" 
-                            placeholder="Enter Your Email to Join the Waitlist" 
+                            placeholder="Enter Your Email"
                             value={email}
                         />
                         <Button 
@@ -97,28 +96,28 @@ export default function HeroAction() {
                             type="submit"
                             disabled={isLoading}
                         >
-                            {isLoading ? "Requesting..." : "Request Access"}
+                            {isLoading ? "Joining..." : "Join the Waitlist"}
                         </Button>
                     </form>
                 )}
                 {step === 2 && (
                     <form onSubmit={handlePlanSubmit}>
-                        <Textarea 
+                        <Textarea
                             onChange={(e: { currentTarget: { value: string; }; }) => setPlan(e.currentTarget.value)} 
                             className="mb-4 text-center text-md border-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:placeholder:text-transparent" 
                             placeholder="How do you plan to use Finyst?" 
                             value={plan}
                         />
-                        <Button 
+                        <Button
                             className="w-full bg-primary font-semibold text-primary-foreground hover:bg-primary/90" 
                             type="submit"
                             disabled={isLoading}
                         >
-                            {isLoading ? "Submitting..." : "Move Up The Waitlist"}
+                            {isLoading ? "Moving Up..." : "Move Up The Waitlist"}
                         </Button>
                     </form>
                 )}
-                {step === 3 && <p className="mt-4 text-cente text-primary">You're in! We'll reach out soon.</p>}
+                {step === 3 && <p className="mt-4 text-center text-primary">You're in! We'll reach out soon.</p>}
                 {message && step !== 3 && <p className="mt-4 text-center text-sm">{message}</p>}
             </CardContent>
         </Card>
