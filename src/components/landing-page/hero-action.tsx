@@ -87,8 +87,8 @@ export default function HeroAction() {
                         <Input
                             onChange={(e: { currentTarget: { value: string; }; }) => setEmail(e.currentTarget.value)} 
                             type="email" 
-                            className="mb-4 text-center text-md border-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:placeholder:text-transparent" 
-                            placeholder="Enter Your Email"
+                            className="mb-4 text-center text-sm md:text-md border-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:placeholder:text-transparent"
+                            placeholder="Enter Your Email to Join the Waitlist"
                             value={email}
                         />
                         <Button 
@@ -96,7 +96,7 @@ export default function HeroAction() {
                             type="submit"
                             disabled={isLoading}
                         >
-                            {isLoading ? "Joining..." : "Join the Waitlist"}
+                            {isLoading ? "Requesting..." : "Request Access"}
                         </Button>
                     </form>
                 )}
@@ -104,8 +104,8 @@ export default function HeroAction() {
                     <form onSubmit={handlePlanSubmit}>
                         <Textarea
                             onChange={(e: { currentTarget: { value: string; }; }) => setPlan(e.currentTarget.value)} 
-                            className="mb-4 text-center text-md border-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:placeholder:text-transparent" 
-                            placeholder="How do you plan to use Finyst?" 
+                            className="mb-4 text-center text-sm md:text-md border-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:placeholder:text-transparent"
+                            placeholder="Tell us how do you plan to use Finyst?"
                             value={plan}
                         />
                         <Button

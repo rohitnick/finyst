@@ -18,7 +18,7 @@ export default function LandingPage() {
         <div className="max-w-screen-xl">
           <Header />
 
-          <main className="container relative mx-auto mt-40 z-20">
+          <main className="container relative mx-auto mt-32 md:mt-40 z-20">
             <section>
               <div className="text-center flex flex-col gap-6">
                 <h1 className="text-4xl md:text-5xl font-semibold mb-4">Financial Research with<br />Power of AI</h1>
