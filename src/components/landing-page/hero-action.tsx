@@ -117,7 +117,7 @@ export default function HeroAction() {
                         </Button>
                     </form>
                 )}
-                {step === 3 && <p className="mt-4 text-center text-primary">You're in! We'll reach out soon.</p>}
+                {step === 3 && <p className="mt-4 text-center text-primary">You&apos;re in! We&apos;ll reach out soon</p>}
                 {message && step !== 3 && <p className="mt-4 text-center text-sm">{message}</p>}
             </CardContent>
         </Card>
