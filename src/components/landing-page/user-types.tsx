@@ -31,18 +31,18 @@ export default function UsersTypes() {
           </div>
         </div>
         <div className="flex-3 relative">
-        <div className="absolute m-auto blur-[250px] h-[8rem] right-[-200px] inset-0 bg-[#0b00ff]"></div>
-          <div className="grid gap-3">
-            {userTypes.map((item, index) => (
-              <div 
-                key={index}
-                className={`${opacityClass[index]} opacity-60 bg-card rounded py-4 px-5 flex items-center gap-x-5 transition-transform hover:scale-105`}
-              >
-                <CheckIcon className="h-6 w-6 flex-shrink-0" />
-                <span className="text-lg md:text-xl">{item}</span>
-              </div>
-            ))}
-          </div>
+        <div className="hidden md:inline-flex absolute m-auto blur-[250px] h-[8rem] right-[-200px] inset-0 bg-[#0b00ff]"></div>
+        <div className="grid gap-3">
+          {userTypes.map((item, index) => (
+            <div 
+              key={index}
+              className={`${opacityClass[index]} opacity-60 bg-card rounded py-4 px-5 flex items-center gap-x-5 transition-transform hover:scale-105`}
+            >
+              <CheckIcon className="h-6 w-6 flex-shrink-0" />
+              <span className="text-lg md:text-xl">{item}</span>
+            </div>
+          ))}
+        </div>
         </div>
       </div>
     </div>

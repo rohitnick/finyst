@@ -53,27 +53,29 @@ export default function Header() {
             </nav> */}
             <div className="flex items-center space-x-4">
                 <Button onClick={toggleTheme} variant="ghost" size="icon">
-                {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+                    {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
                 </Button>
                 <Link target="_blank" href={googleFormLink}>
-                <Button variant="outline" size="lg" className='hidden bg-transparent md:inline-flex rounded-full border'>
-                Get Started
-                </Button>
+                    <Button variant="outline" size="lg" className='hidden bg-transparent md:inline-flex rounded-full border'>
+                        Get Started
+                    </Button>
                 </Link>
                 <Button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden" variant="ghost" size="icon">
-                <HamburgerMenuIcon className="h-5 w-5" />
+                    <HamburgerMenuIcon className="h-5 w-5" />
                 </Button>
             </div>
             </div>
             {isMenuOpen && (
-            <nav className="md:hidden p-4 space-y-2 bg-background/95">
+            <nav className="md:hidden p-4 space-y-2 bg-transparent">
                 {/* <Link href="#" className="block hover:text-yellow-500">Blog</Link>
                 <Link href="#" className="block hover:text-yellow-500">Discord</Link>
                 <Link href="#" className="block hover:text-yellow-500">Slack</Link>
                 <Link href="#" className="block hover:text-yellow-500">Contact</Link> */}
-                <Button variant="outline">
-                Get Started
-                </Button>
+                <Link target="_blank" href={googleFormLink}>
+                    <Button variant="outline">
+                        Get Started
+                    </Button>
+                </Link>
             </nav>
             )}
 
