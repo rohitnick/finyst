@@ -13,7 +13,7 @@ export default function HeroAction() {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const link = googleFormLink +`?emailAddress=`+email;
-        const win = window.open(link, '_blank');
+        const win = globalThis.open(link, '_blank');
         if (win != null) {
             win.focus();
         }

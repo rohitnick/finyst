@@ -1,7 +1,6 @@
 'use client'
 
 import Link from "next/link"
-import { useRef } from "react"
 
 import FAQ from "@/components/landing-page/faq"
 import UsersTypes from "@/components/landing-page/user-types"

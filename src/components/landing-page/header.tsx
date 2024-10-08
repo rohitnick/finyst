@@ -25,17 +25,17 @@ export default function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-        if (window.scrollY > 90) {
+        if (globalThis.scrollY > 90) {
             setIsScrolled(true);
         } else {
             setIsScrolled(false);
         }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        globalThis.addEventListener('scroll', handleScroll);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            globalThis.removeEventListener('scroll', handleScroll);
         };
     }, []);
 

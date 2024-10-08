@@ -9,7 +9,7 @@ export default function UsersTypes() {
     'EDUCATORS'
   ]
 
-  const opacityClass: any = {
+  const opacityClass: Record<number, string> = {
     0: 'opacity-30',
     1: 'opacity-60',
     2: 'opacity-95',
