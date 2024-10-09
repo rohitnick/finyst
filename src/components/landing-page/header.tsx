@@ -78,7 +78,7 @@ export default function Header() {
 
         { theme === 'dark' &&
             (<div className="absolute top-0 right-0 z-0 w-full">
-                <Image alt="background" src='/background-1.png' width={0} height={0} className="self-stretch w-full h-full mask-image-[linear-gradient(to_top,transparent,10%,white,90%,transparent)]"/>
+                <Image alt="" src='/background-1.png' width={0} height={0} className="self-stretch w-full h-full mask-image-[linear-gradient(to_top,transparent,10%,white,90%,transparent)]"/>
             </div>)
         }
     </>)

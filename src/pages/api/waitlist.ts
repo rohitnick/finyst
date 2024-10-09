@@ -10,7 +10,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
   if (!plan) {
       if (!user) {
           // Save the email if no entry exists
-          await kv.set(`waitlist:${email}`, { email });
+          await kv.set(`${process.env.NODE_ENV}:waitlist:${email}`, { email });
       }
       return response.status(200).json({ message: 'Email saved successfully.' });
   }
