@@ -36,7 +36,7 @@ export default function LandingPage() {
               <Insights />
             </section>
 
-            <section className="mt-16 md:mt-20 border py-12 px-8 rounded">
+            <section className="mt-16 md:mt-20 border py-6 px-3 md:py-12 md:px-8 rounded">
               <Steps/>
             </section>
 
@@ -49,7 +49,7 @@ export default function LandingPage() {
             </section>
 
             <footer className='mt-16 md:mt-20'>
-              <div className="border-t flex justify-between items-center py-10">
+              <div className="border-t flex justify-between items-center py-5 md:py-10">
                 <div className="flex space-x-4 items-center">
                   <Link href="https://www.linkedin.com/company/finyst-ai/" className="p-3 border rounded-full bg-card"><LinkedinIcon className="h-4" /></Link>
                   <Link href="https://discord.gg/QHCGPrn3" className="p-3 border rounded-full bg-card"><DiscordIcon className="h-4" /></Link>

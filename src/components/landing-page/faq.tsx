@@ -29,7 +29,7 @@ export default function FAQ() {
   ]
 
   return (
-    <Card className="w-full mx-auto px-8 py-12 bg-transparent">
+    <Card className="w-full mx-auto py-6 px-3 md:py-12 md:px-8 bg-transparent">
       <CardHeader className="text-center p-0">
         <CardTitle className="text-4xl font-bold mb-2">Everything you need to know</CardTitle>
         <p className="text-muted-foreground text-xl">Here are the questions most people always ask about.</p>

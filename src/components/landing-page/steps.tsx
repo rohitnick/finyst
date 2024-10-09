@@ -24,7 +24,7 @@ export default function Steps() {
   
   function ImageCard({ src, alt }: {src: string, alt: string}) {
     return (
-      <Card className="bg-transparent drop-shadow-lg">
+      <Card className="bg-transparent drop-shadow-lg border-0 md:border">
         <CardContent className="p-0">
           <Image src={src} alt={alt} width={0} height={0} sizes="100vw" className="h-[550px] w-full rounded-lg" />
         </CardContent>
