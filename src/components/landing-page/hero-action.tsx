@@ -81,7 +81,7 @@ export default function HeroAction() {
 
     return (
         <Card className="max-w-2xl mx-auto md:p-10 md:border-none rounded-3xl drop-shadow-lg shadow-[0_0_50px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.3)] transition duration-300">
-            <CardContent className="p-6 md:p-10 border rounded-3xl shadow-md">
+            <CardContent className="py-8 px-4 md:p-10 border rounded-3xl shadow-md">
                 {step === 1 && (
                     <form onSubmit={handleEmailSubmit}>
                         <Input
