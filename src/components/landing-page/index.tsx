@@ -17,12 +17,12 @@ export default function LandingPage() {
       <center>
         <div className="max-w-screen-xl">
           <Header />
-
           <main className="container relative mx-auto mt-32 md:mt-40 z-20">
             <section>
               <div className="items-center flex flex-col gap-4 md:gap-6">
-                <h1 className="text-4xl md:text-5xl font-semibold mb-4 max-w-[44rem]">AI-Driven Financial Research Companion</h1>
-                <p className="text-md md:text-xl mx-auto leading-relaxed text-muted-foreground max-w-[46rem]">
+                {/* Partner, Assistant, Analysis, Sidekick, Tool, Platform */}
+                <h1 className="text-4xl md:text-5xl font-semibold mb-4 max-w-[44rem]">Financial Research Companion Powered by AI</h1>
+                <p className="text-md md:text-xl mx-auto leading-relaxed text-accent-foreground/50 max-w-[50rem]">
                   Finyst does the research for you, so you can spend less time stressing over it and more time focusing on the things that really matter
                 </p>
               </div>
@@ -36,7 +36,7 @@ export default function LandingPage() {
               <Insights />
             </section>
 
-            <section className="mt-16 md:mt-20 border py-6 px-3 md:py-12 md:px-8 rounded">
+            <section className="mt-16 md:mt-20">
               <Steps/>
             </section>
 

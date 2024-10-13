@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Card } from "@/components/ui/card"
-import { ArrowRightIcon, CheckIcon, CopyIcon, FileIcon, LayersIcon, Link2Icon, ReaderIcon } from '@radix-ui/react-icons'
+import { ArrowRightIcon, CheckIcon, CopyIcon, LayersIcon, Link2Icon, PaperPlaneIcon, Pencil2Icon, ReaderIcon } from '@radix-ui/react-icons'
 import {
   Accordion,
   AccordionContent,
@@ -11,8 +11,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from '../ui/button'
+import { Input } from '../ui/input'
+import PulsatingDot from '../pulsating-dot'
 
-export default function Component() {
+export default function Step4({setStep}: {setStep: Dispatch<SetStateAction<number>>}) {
   const [isCopied, setIsCopied] = useState(false)
 
   const reportSections = [
@@ -50,10 +52,39 @@ export default function Component() {
   
 
   const sources = [
-    { id: 1, title: "Tata Consultancy Services Ltd....", domain: "trendlyne.com", url: "https://trendlyne.com/...", icon: "T", color: "bg-blue-500" },
-    { id: 2, title: "PDF 11 October 2024 Results Review Q2FY2...", domain: "hdfsec.com", url: "https://hdfsec.com/...", icon: "+", color: "bg-red-500" },
-    { id: 3, title: "TCS Q2 Results: What to expect from Rs 15 lakh...", domain: "indiatimes.com", url: "https://indiatimes.com/...", icon: "ET", color: "bg-pink-500" },
-  ]
+    {
+      id: 1,
+      title: "Tata Consultancy Services Ltd. Stock Analysis and Reports",
+      domain: "trendlyne.com",
+      url: "https://trendlyne.com/research-reports/stock/1372/TCS/",
+      icon: "T",
+      color: "bg-blue-500"
+    },
+    {
+      id: 2,
+      title: "TCS Financial Overview on Screener",
+      domain: "screener.in",
+      url: "https://www.screener.in/company/TCS/consolidated/",
+      icon: "S",
+      color: "bg-green-500"
+    },
+    {
+      id: 3,
+      title: "Tata Consultancy Services - Company Overview",
+      domain: "simplywall.st",
+      url: "https://simplywall.st/stocks/in/software/nse-tcs/tata-consultancy-services-shares",
+      icon: "SW",
+      color: "bg-purple-500"
+    },
+    {
+      id: 4,
+      title: "TCS Annual Report 2023-2024",
+      domain: "tcs.com",
+      url: "https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2023-24/ar/annual-report-2023-2024.pdf",
+      icon: "PDF",
+      color: "bg-gray-500"
+    }
+  ];
 
   const relatedQuestions = [
     "What are the key factors driving the expected growth in TCS's BFSI sector, and how sustainable are these factors?",
@@ -62,7 +93,7 @@ export default function Component() {
   ]
 
   const copyReportToClipboard = async () => {
-    const reportText = reportSections.map(section => `${section.title}\n\n${section.content}\n\n`).join('')
+    const reportText = reportSections.map(section => `${section.title}\n${section.content}\n\n`).join('')
     
     try {
       await navigator.clipboard.writeText(reportText)
@@ -74,7 +105,10 @@ export default function Component() {
   }
 
   return (
-    <div className="flex text-left flex-col bg-transparen drop-shadow-lg p-4 rounded-lg border text-card-foreground shadow-sm">
+    <div className="flex text-left flex-col bg-transparent drop-shadow-lg p-4 rounded-lg border text-card-foreground shadow-sm">
+      <header className="w-full flex justify-between items-center mb-8">
+        <h1 className="text-2xl font-bold">Step 4: Get Your Custom Report</h1>
+      </header>
       <div className="max-w-4xl mx-auto space-y-4">      
         <div className="space-y-3">
           <h1 className="text-lg font-bold flex items-center leading-none gap-1">
@@ -91,7 +125,7 @@ export default function Component() {
                     {section.title}
                   </AccordionTrigger>
                   <AccordionContent>
-                        <ScrollArea className="h-[200px] w-full pr-4">
+                        <ScrollArea className="w-full pr-4">
                           <p className="">{section.content}</p>
                         </ScrollArea>
                   </AccordionContent>
@@ -120,7 +154,7 @@ export default function Component() {
             <Link2Icon className='text-primary' />
             Sources
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div className="grid grid-cols-1 grid-cols-3 md:grid-cols-5 gap-2">
             {sources.map((source, index) => (
               <Card key={source.id} className="bg-card overflow-hidden">
                 <a href={source.url} target="_blank" rel="noopener noreferrer" className="block p-3">
@@ -132,7 +166,6 @@ export default function Component() {
                       <p className="text-sm truncate">{source.title}</p>
                       <p className="text-xs truncate">{source.domain}</p>
                     </div>
-                    <div className="text-xs font-medium">{index + 1}</div>
                   </div>
                 </a>
               </Card>
@@ -146,21 +179,42 @@ export default function Component() {
         </div>
 
         <div className="space-y-2">
-        <h2 className="flex items-center leading-none py-2 gap-1 text-md">
-          <LayersIcon className='text-primary' />
-          Related
-        </h2>
-        <ul className="space-y-1.5 text-muted-foreground text-sm">
-          {relatedQuestions.map((question, index) => (
-            <li key={index} className="flex items-start hover:underline cursor-pointer">
-              <ArrowRightIcon className="mr-2 h-5 w-5 flex-shrink-0 mt-0.5" />
-              <span className="text-sm">{question}</span>
-            </li>
-          ))}
-        </ul>
+          <h2 className="flex items-center leading-none py-2 gap-1 text-md">
+            <LayersIcon className='text-primary' />
+            Related
+          </h2>
+          <ul className="space-y-1.5 text-muted-foreground text-sm">
+            {relatedQuestions.map((question, index) => (
+              <li key={index} className="flex items-start hover:underline">
+                <ArrowRightIcon className="mr-2 h-5 w-5 flex-shrink-0 mt-0.5" />
+                <span className="text-sm">{question}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className='space-y-2'>
+          <h2 className="flex items-center leading-none py-2 gap-1 text-md">
+            <Pencil2Icon className='text-primary' />
+            Follow Up
+          </h2>
+          <div className='relative cursor-pointer' onClick={() => {setStep(1); globalThis.scrollBy({
+            top: -250,
+            left: 0,
+            behavior: "smooth",
+          });}}>
+            <Input
+              type="text"
+              placeholder="Ask a question..."
+              className="pr-20 border-primary focus:border-0"
+            />
+            <Button className="absolute right-0 top-0 h-full" variant="link">
+              <PaperPlaneIcon className="w-6 h-6" />
+            </Button>
+            <PulsatingDot positionClass="-right-1 -top-1" message="Click here" />
+          </div>
+        </div>
       </div>
-      </div>
-      
     </div>
   )
 }

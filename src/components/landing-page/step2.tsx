@@ -8,24 +8,22 @@ import { Label } from "@/components/ui/label"
 import { PaperPlaneIcon } from '@radix-ui/react-icons'
 import { ThemeToggle } from '../theme-toggle'
 import { Card } from '../ui/card'
+import PulsatingDot from '../pulsating-dot'
 
 export default function Step2({setStep}: {setStep: Dispatch<SetStateAction<number>>}) {
 
   const researchOptions = [
     { id: 'financial', label: 'Financial Performance' },
     { id: 'products', label: 'Products and Services' },
-    { id: 'history', label: 'Company History' },
-    { id: 'leadership', label: 'Leadership Team' },
-    { id: 'competitors', label: 'Competitor Analysis' },
+    { id: 'history', label: 'Market Capitalization' },
+    { id: 'leadership', label: 'Analyst Insights' },
+    { id: 'competitors', label: 'Valuation Analysis' },
   ]
 
   return (
-    <div className="flex text-left flex-col bg-transparen drop-shadow-lg p-4 rounded-lg border text-card-foreground shadow-sm">
+    <div className="flex text-left flex-col bg-transparent drop-shadow-lg p-4 rounded-lg border text-card-foreground shadow-sm">
       <header className="w-full flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold">Finyst</h1>
-        <div className="flex items-center">
-          <ThemeToggle />
-        </div>
+        <h1 className="text-2xl font-bold">Step 2: Refine Keywords</h1>
       </header>
       <div className="w-full space-y-6 rounded-xl">
         {/* <h1 className="text-xl font-bold mb-4">Create a research report on Tata Consultancy Services Ltd (TCS)</h1> */}
@@ -37,7 +35,7 @@ export default function Step2({setStep}: {setStep: Dispatch<SetStateAction<numbe
               readOnly
               className="pr-20 border-primary focus:border-0"
           />
-          <Button className="absolute right-0 top-0 h-full" variant="link">
+          <Button className="absolute right-0 top-0 h-full cursor-default" variant="link">
             <PaperPlaneIcon className="w-6 h-6" />
           </Button>
         </div>
@@ -61,17 +59,18 @@ export default function Step2({setStep}: {setStep: Dispatch<SetStateAction<numbe
             <Input 
               id="other"
               type="text"
-              placeholder="e.g., Sustainability initiatives"
+              placeholder="e.g., Management remuneration, Cash flow analysis "
               className="pr-20"
             />
           </div>
 
           <div className="flex justify-end space-x-4 mt-4">
-            <Button size="sm" variant="outline" className="border">
+            <Button size="sm" variant="outline" className="border cursor-default">
               Skip
             </Button>
-            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => setStep(3)}>
+            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 relative" onClick={() => setStep(3)}>
               Send
+              <PulsatingDot positionClass="-top-1 -right-1" message="Click here" />
             </Button>
           </div>
         </Card>

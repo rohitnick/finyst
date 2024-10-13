@@ -11,36 +11,13 @@ export default function Steps() {
   const [step, setStep] = useState(1);
 
   return (
-    <div>
+    <div className="max-w-2xl">
       <h2 className="text-4xl font-bold text-center mb-2">How it works</h2>
-      <p className="text-center text-md md:text-xl mb-8 text-muted-foreground">Financial analysis and insights in three easy steps.</p>
-      {step === 1 && (
-        <div className="grid md:grid-cols-2 gap-4 items-center">
-          <h3 className="sm:text-2xl md:text-3xl">Set Your Prompt</h3>
-          <Step1 setStep={setStep} />
-        </div>
-      )}
-
-      {step === 2 && (
-        <div className="grid md:grid-cols-2 gap-4 items-center">
-          <h3 className="sm:text-2xl md:text-3xl">Real-Time Data and AI-Powered<br/>Analysis</h3>
-          <Step2 setStep={setStep} />
-        </div>
-      )}
-
-      {step === 3 && (
-        <div className="grid md:grid-cols-2 gap-4 items-center">
-          <h3 className="sm:text-2xl md:text-3xl">Receive Tailored, In-Depth Reports</h3>
-          <Step3 setStep={setStep} />
-        </div>
-      )}
-
-      {step === 4 && (
-        <div className="grid md:grid-cols-2 gap-4 items-center">
-          <h3 className="sm:text-2xl md:text-3xl">Receive Tailored, In-Depth Reports</h3>
-          <Step4 />
-        </div>
-      )}
+      <p className="text-center text-md md:text-xl mb-8 text-accent-foreground/50">Financial analysis and insights in three easy steps.</p>
+      {step === 1 && <Step1 setStep={setStep} />}
+      {step === 2 && <Step2 setStep={setStep} />}
+      {step === 3 && <Step3 setStep={setStep} />}
+      {step === 4 && <Step4 setStep={setStep} />}
     </div>
   )
 }

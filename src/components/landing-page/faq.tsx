@@ -32,14 +32,14 @@ export default function FAQ() {
     <Card className="w-full mx-auto py-6 px-3 md:py-12 md:px-8 bg-transparent">
       <CardHeader className="text-center p-0">
         <CardTitle className="text-4xl font-bold mb-2">Everything you need to know</CardTitle>
-        <p className="text-muted-foreground text-xl">Here are the questions most people always ask about.</p>
+        <p className="text-accent-foreground/50 text-xl">Here are the questions most people always ask about.</p>
       </CardHeader>
       <CardContent className="p-0 mt-11">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-11 text-left">
           {faqs.map((faq, index) => (
             <div key={index} className="space-y-2">
               <h3 className="font-semibold">{faq.question}</h3>
-              <p className="text-muted-foreground">{faq.answer}</p>
+              <p className="text-accent-foreground/50">{faq.answer}</p>
             </div>
           ))}
         </div>

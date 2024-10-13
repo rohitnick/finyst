@@ -1,9 +1,10 @@
 import { PaperPlaneIcon, GlobeIcon, FileTextIcon, BarChartIcon, PieChartIcon, ExclamationTriangleIcon } from '@radix-ui/react-icons'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Dispatch, SetStateAction } from 'react'
+import PulsatingDot from '../pulsating-dot'
 
 interface OptionCardProps {
   icon: React.ReactNode,
@@ -12,9 +13,9 @@ interface OptionCardProps {
 
 export default function Step1({setStep}: {setStep: Dispatch<SetStateAction<number>>}) {
 
-  const OptionCard = ({ icon, text }: OptionCardProps) => {
+  const OptionCard = ({ icon, text}: OptionCardProps) => {
     return (
-      <Card className="flex items-center p-4 hover:bg-secondary cursor-pointer transition-colors" onClick={() => setStep(2)} >
+      <Card className="flex items-center p-4 hover:bg-secondary transition-colors" >
         <div className="text-primary mr-4">{icon}</div>
         <p className="text-sm">{text}</p>
       </Card>
@@ -22,12 +23,9 @@ export default function Step1({setStep}: {setStep: Dispatch<SetStateAction<numbe
   }
 
   return (
-    <main className="flex flex-col bg-transparent drop-shadow-lg p-4 rounded-lg border text-card-foreground shadow-sm">
+    <div className="flex flex-col bg-transparent drop-shadow-lg p-4 rounded-lg border text-card-foreground shadow-sm">
       <header className="w-full flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold">Finyst</h1>
-        <div className="flex items-center">
-          <ThemeToggle />
-        </div>
+        <h1 className="text-2xl font-bold">Step 1: Set Your Query</h1>
       </header>
 
       <div className="w-full mb-8">
@@ -37,8 +35,8 @@ export default function Step1({setStep}: {setStep: Dispatch<SetStateAction<numbe
             placeholder="Ask a question..." 
             className="pr-20 border-primary focus:border-0"
           />
-          <Button className="absolute right-0 top-0 h-full" variant="link">
-            <PaperPlaneIcon className="w-6 h-6 text-primary" />
+          <Button className="absolute right-0 top-0 h-full cursor-default" variant="link">
+            <PaperPlaneIcon className="w-6 h-6" />
           </Button>
         </div>
         <div className='w-full text-right'>
@@ -46,12 +44,15 @@ export default function Step1({setStep}: {setStep: Dispatch<SetStateAction<numbe
         </div>
       </div>
 
-      <div className="w-full space-y-4">
-        <OptionCard 
-          icon={<GlobeIcon className="w-6 h-6" />}
-          text="Create a research report on Tata Consultancy Services Ltd (TCS)"
-        />
-        <OptionCard 
+      <div className="w-full space-y-4 relative">
+        <a className='cursor-pointer' onClick={() => setStep(2)}>
+          <OptionCard
+            icon={<GlobeIcon className="w-6 h-6" />}
+            text="Create a research report on Tata Consultancy Services Ltd (TCS)"
+          />
+          <PulsatingDot positionClass="-top-1 -right-1" message="Click here" />
+        </a>
+        <OptionCard
           icon={<FileTextIcon className="w-6 h-6" />}
           text="Balance Sheet Analysis of Trent Ltd. for the Financial Year 2023-2024"
         />
@@ -68,6 +69,6 @@ export default function Step1({setStep}: {setStep: Dispatch<SetStateAction<numbe
           text="Identify potential risks in the current market conditions"
         />
       </div>
-    </main>
+    </div>
   )
 }
