@@ -34,6 +34,7 @@ export default function Step1({setStep}: {setStep: Dispatch<SetStateAction<numbe
             type="text" 
             placeholder="Ask a question..." 
             className="pr-20 border-primary focus:border-0"
+            readOnly
           />
           <Button className="absolute right-0 top-0 h-full cursor-default" variant="link">
             <PaperPlaneIcon className="w-6 h-6" />

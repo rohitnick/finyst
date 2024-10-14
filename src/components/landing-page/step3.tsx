@@ -89,6 +89,7 @@ export default function Step3({setStep}: {setStep: Dispatch<SetStateAction<numbe
                     value={newUrl}
                     onChange={(e) => setNewUrl(e.target.value)}
                     className="flex-grow"
+                    readOnly
                     />
                     <Button 
                     onClick={addUrl}
@@ -98,16 +99,21 @@ export default function Step3({setStep}: {setStep: Dispatch<SetStateAction<numbe
                     </Button>
                 </div>
             </div>
-
-            <div className="flex justify-end space-x-4 mt-4">
-                <Button size="sm" variant="outline" className="border cursor-default">
+          <div className="flex justify-between mt-4">
+            <Button size="sm" className="border relative" onClick={() => setStep(2)}>
+              Back
+              <PulsatingDot positionClass="-top-1 -right-1" message="Click here" />
+            </Button>
+            <div className='space-x-4'>
+              <Button size="sm" variant="outline" disabled className="border">
                 Skip
-                </Button>
-                <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 relative" onClick={() => setStep(4)} >
-                  Send
-                  <PulsatingDot positionClass="-top-1 -right-1" message="Click here" />
-                </Button>
+              </Button>
+              <Button size="sm" className="relative" onClick={() => setStep(4)}>
+                Send
+                <PulsatingDot positionClass="-top-1 -right-1" message="Click here" />
+              </Button>
             </div>
+          </div>
         </Card>
       </div>
     </div>

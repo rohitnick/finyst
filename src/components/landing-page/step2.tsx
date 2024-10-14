@@ -61,17 +61,24 @@ export default function Step2({setStep}: {setStep: Dispatch<SetStateAction<numbe
               type="text"
               placeholder="e.g., Management remuneration, Cash flow analysis "
               className="pr-20"
+              readOnly
             />
           </div>
 
-          <div className="flex justify-end space-x-4 mt-4">
-            <Button size="sm" variant="outline" className="border cursor-default">
-              Skip
-            </Button>
-            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 relative" onClick={() => setStep(3)}>
-              Send
+          <div className="flex justify-between mt-4">
+            <Button size="sm" className="border relative" onClick={() => setStep(1)}>
+              Back
               <PulsatingDot positionClass="-top-1 -right-1" message="Click here" />
             </Button>
+            <div className='space-x-4'>
+              <Button size="sm" variant="outline" disabled className="border">
+                Skip
+              </Button>
+              <Button size="sm" className="relative" onClick={() => setStep(3)}>
+                Send
+                <PulsatingDot positionClass="-top-1 -right-1" message="Click here" />
+              </Button>
+            </div>
           </div>
         </Card>
       </div>

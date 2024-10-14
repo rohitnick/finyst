@@ -49,7 +49,6 @@ export default function Step4({setStep}: {setStep: Dispatch<SetStateAction<numbe
       content: "Tata Consultancy Services Ltd remains a key player in the global IT services market, with strong financial performance and strategic initiatives aimed at sustaining growth. The upcoming quarterly results will be crucial in assessing its trajectory in the competitive landscape of IT services."
     }
   ];
-  
 
   const sources = [
     {
@@ -102,6 +101,15 @@ export default function Step4({setStep}: {setStep: Dispatch<SetStateAction<numbe
     } catch (err) {
       console.error('Failed to copy text: ', err)
     }
+  }
+
+  const setStepState = (step: number) => {
+    setStep(step);
+    globalThis.scrollBy({
+      top: -280,
+      left: 0,
+      behavior: "smooth",
+    })
   }
 
   return (
@@ -193,25 +201,19 @@ export default function Step4({setStep}: {setStep: Dispatch<SetStateAction<numbe
           </ul>
         </div>
 
-        <div className='space-y-2'>
-          <h2 className="flex items-center leading-none py-2 gap-1 text-md">
-            <Pencil2Icon className='text-primary' />
-            Follow Up
-          </h2>
-          <div className='relative cursor-pointer' onClick={() => {setStep(1); globalThis.scrollBy({
-            top: -250,
-            left: 0,
-            behavior: "smooth",
-          });}}>
-            <Input
-              type="text"
-              placeholder="Ask a question..."
-              className="pr-20 border-primary focus:border-0"
-            />
-            <Button className="absolute right-0 top-0 h-full" variant="link">
-              <PaperPlaneIcon className="w-6 h-6" />
+        <div className="flex justify-between mt-4">
+          <Button size="sm" className="border relative" onClick={() => setStepState(3)}>
+            Back
+            <PulsatingDot positionClass="-top-1 -right-1" message="Click here" />
+          </Button>
+          <div className='space-x-4'>
+            <Button size="sm" variant="outline" disabled className="border">
+              Download Report
             </Button>
-            <PulsatingDot positionClass="-right-1 -top-1" message="Click here" />
+            <Button size="sm" className="relative" onClick={() => setStepState(1)}>
+              Restart
+              <PulsatingDot positionClass="-top-1 -right-1" message="Click here" />
+            </Button>
           </div>
         </div>
       </div>
