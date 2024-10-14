@@ -11,13 +11,21 @@ export default function Steps() {
   const [step, setStep] = useState(1);
 
   return (
-    <div className="max-w-2xl">
-      <h2 className="text-4xl font-bold text-center mb-2">How it works</h2>
-      <p className="text-center text-md md:text-xl mb-8 text-accent-foreground/50">Financial analysis and insights in three easy steps.</p>
-      {step === 1 && <Step1 setStep={setStep} />}
-      {step === 2 && <Step2 setStep={setStep} />}
-      {step === 3 && <Step3 setStep={setStep} />}
-      {step === 4 && <Step4 setStep={setStep} />}
+    <div className="mx-auto grid items-center md:grid-cols-2 gap-3 md:border rounded-lg py-6 px-3 md:py-12 md:px-8">
+      {/* First Section */}
+      <div className="flex justify-start md:order-1 order-2">
+        {step === 1 && <Step1 setStep={setStep} />}
+        {step === 2 && <Step2 setStep={setStep} />}
+        {step === 3 && <Step3 setStep={setStep} />}
+        {step === 4 && <Step4 setStep={setStep} />}
+      </div>
+      {/* Second Section */}
+      <div className="flex flex-col gap-1 md:gap-2 md:order-2 order-1">
+        <h1 className="text-3xl lg:text-4xl font-bold">How It Works</h1>
+        <p className="text-lg md:text-xl text-muted-foreground">
+          Financial analysis and insights in four easy steps.
+        </p>
+      </div>
     </div>
   )
 }

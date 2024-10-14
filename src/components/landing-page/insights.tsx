@@ -3,7 +3,7 @@ import { AnalysisIcon, LineChartIcon, ResearchIcon } from "@/components/ui/icons
 
 export default function Insights() {
   return (
-    <Card className="w-full mx-auto py-6 px-3 md:py-12 md:px-8 bg-transparent">
+    <Card className="border-none bg-transparent">
       <CardContent className="p-0 py-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
         <div className="flex items-start space-x-4">
           <div className="p-1 bg-card border rounded"><LineChartIcon className="h-6 flex-shrink-0" /></div>

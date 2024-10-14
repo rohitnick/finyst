@@ -38,7 +38,7 @@ export default function Step3({setStep}: {setStep: Dispatch<SetStateAction<numbe
   }
 
   return (
-    <div className="flex text-left flex-col bg-transparent drop-shadow-lg p-4 rounded-lg border text-card-foreground shadow-sm">
+    <div className="flex text-left flex-col bg-transparent p-4 rounded-lg border text-card-foreground">
       <header className="w-full flex justify-between items-center mb-8">
         <h1 className="text-2xl font-bold">Step 3: Select Sources to Analyze</h1>
       </header>

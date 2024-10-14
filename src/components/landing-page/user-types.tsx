@@ -18,23 +18,20 @@ export default function UsersTypes() {
   }
 
   return (
-    <div className="flex justify-center">
-      <div className="max-w-7xl w-full mx-auto flex flex-col lg:flex-row gap-3">
-        <div className="flex-4 flex flex-row grow items-center ">
-          <div className="flex flex-col items-start">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-left">
-              AI for Financial <br/>Workflows.
-            </h1>
-            <p className="text-lg md:text-xl text-left">
-              Join us today and experience the power of AI-powered financial <br/> operations.
-            </p>
-          </div>
-        </div>
-        <div className="flex-3 relative">
+    <div className="mx-auto grid items-center md:grid-cols-2 gap-3">
+    <div className="flex flex-col gap-1 md:gap-2">
+      <h1 className="text-3xl lg:text-4xl font-bold md:text-left">
+        Designed for All Financial Decision Makers
+      </h1>
+      <p className="text-lg md:text-xl md:text-left text-muted-foreground">
+        Empowering investors, firms, and advisors with the tools for smarter, faster decision-making.
+      </p>
+    </div>
+    <div className="flex justify-end relative">
         <div className="hidden md:inline-flex absolute m-auto blur-[250px] h-[8rem] right-[-200px] inset-0 bg-[#0b00ff]"></div>
-        <div className="grid gap-3">
+        <div className="grid gap-3 w-full md:w-auto">
           {userTypes.map((item, index) => (
-            <div 
+            <div
               key={index}
               className={`${opacityClass[index]} opacity-60 bg-card rounded py-4 px-5 flex items-center gap-x-5 transition-transform hover:scale-105`}
             >
@@ -43,8 +40,7 @@ export default function UsersTypes() {
             </div>
           ))}
         </div>
-        </div>
-      </div>
     </div>
+  </div>
   )
 }
