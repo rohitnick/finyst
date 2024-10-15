@@ -1,10 +1,9 @@
 import { PaperPlaneIcon, GlobeIcon, FileTextIcon, BarChartIcon, PieChartIcon, ExclamationTriangleIcon } from '@radix-ui/react-icons'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ThemeToggle } from '@/components/theme-toggle'
+import { Card } from "@/components/ui/card"
 import { Dispatch, SetStateAction } from 'react'
-import PulsatingDot from '../pulsating-dot'
+import PulsatingDot from '@/components/pulsating-dot'
 
 interface OptionCardProps {
   icon: React.ReactNode,

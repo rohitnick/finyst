@@ -9,7 +9,7 @@ import Steps from "@/components/landing-page/steps"
 import HeroAction from "@/components/landing-page/hero-action"
 import Header from "@/components/landing-page/header";
 import { DiscordIcon, LinkedinIcon } from "@/components/ui/icons"
-import { Card } from "../ui/card"
+import { Card } from "@/components/ui/card"
 
 export default function LandingPage() {
   
@@ -70,14 +70,14 @@ export default function LandingPage() {
             <footer className='mt-16 md:mt-20'>
               <div className="border-t flex justify-between items-center py-5 md:py-10">
                 <div className="flex space-x-4 items-center">
-                  <Link href="https://www.linkedin.com/company/finyst-ai/" className="p-3 border rounded-full bg-card"><LinkedinIcon className="h-4" /></Link>
-                  <Link href="https://discord.gg/QHCGPrn3" className="p-3 border rounded-full bg-card"><DiscordIcon className="h-4" /></Link>
+                  <Link href="https://www.linkedin.com/company/finyst-ai/" target="_blank" className="p-3 border rounded-full bg-card"><LinkedinIcon className="h-4" /></Link>
+                  <Link href="https://discord.gg/QHCGPrn3" target="_blank" className="p-3 border rounded-full bg-card"><DiscordIcon className="h-4" /></Link>
                 </div>
                 <div className="text-right text-sm md:text-md">
                   Finyst © 2024 All rights reserved.
                 </div>
               </div>
-          </footer>
+            </footer>
           </main>
         </div>
       </center>

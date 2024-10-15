@@ -1,35 +1,31 @@
 'use client'
 
-import Image from "next/image";
 import { useState, useEffect } from "react"
-import { SunIcon, MoonIcon, HamburgerMenuIcon } from "@radix-ui/react-icons"
+import { HamburgerMenuIcon } from "@radix-ui/react-icons"
 
 
 import { Button } from "@/components/ui/button"
 import { Logo } from "@/components/ui/icons"
+import { ThemeToggle } from "@/components/theme-toggle";
+import { BlueGreenBackground } from "@/components/blue-green-background";
 
 export default function Header() {
-    const [theme, setTheme] = useState('dark')
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false);
+    const [theme, setTheme] = useState('dark');
 
     useEffect(() => {
-      document.body.className = theme
-    }, [theme])
-  
-    const toggleTheme = () => {
-      setTheme(theme === 'dark' ? 'light' : 'dark')
-    }
+        // Read the current theme from localStorage and set it in state
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
-        if (globalThis.scrollY > 70) {
-            setIsScrolled(true);
-        } else {
-            setIsScrolled(false);
-        }
+            setIsScrolled(globalThis.scrollY > 70);
         };
 
+        globalThis.scroll
         globalThis.addEventListener('scroll', handleScroll);
 
         return () => {
@@ -50,9 +46,7 @@ export default function Header() {
                 <Link href="#" className="hover:text-primary">Contact</Link>
             </nav> */}
             <div className="flex items-center space-x-4">
-                <Button onClick={toggleTheme} variant="ghost" size="icon">
-                    {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
-                </Button>
+                <ThemeToggle />
                 <Button variant="outline" size="lg" className='hidden bg-transparent md:inline-flex rounded-full border'>
                     Coming Soon
                 </Button>
@@ -75,10 +69,6 @@ export default function Header() {
 
         </header>
 
-        { theme === 'dark' &&
-            (<div className="absolute top-0 right-0 z-0 w-full">
-                <Image alt="" src='/background-1.png' width={0} height={0} className="self-stretch w-full h-full mask-image-[linear-gradient(to_top,transparent,10%,white,90%,transparent)]"/>
-            </div>)
-        }
+        <BlueGreenBackground />
     </>)
 }

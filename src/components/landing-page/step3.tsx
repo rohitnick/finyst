@@ -6,9 +6,8 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { PaperPlaneIcon, PlusIcon, TrashIcon } from '@radix-ui/react-icons'
-import { ThemeToggle } from '../theme-toggle'
-import { Card } from '../ui/card'
-import PulsatingDot from '../pulsating-dot'
+import { Card } from '@/components/ui/card'
+import PulsatingDot from '@/components/pulsating-dot'
 import Link from 'next/link'
 
 export default function Step3({setStep}: {setStep: Dispatch<SetStateAction<number>>}) {
@@ -106,10 +105,10 @@ export default function Step3({setStep}: {setStep: Dispatch<SetStateAction<numbe
             </Button>
             <div className='space-x-4'>
               <Button size="sm" variant="outline" disabled className="border">
-                Skip
+                Skip & Generate
               </Button>
               <Button size="sm" className="relative" onClick={() => setStep(4)}>
-                Send
+                Generate Report
                 <PulsatingDot positionClass="-top-1 -right-1" message="Click here" />
               </Button>
             </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { Dispatch, SetStateAction, useState } from 'react'
+
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Card } from "@/components/ui/card"
 import { ArrowRightIcon, CheckIcon, CopyIcon, LayersIcon, Link2Icon, PaperPlaneIcon, Pencil2Icon, ReaderIcon } from '@radix-ui/react-icons'
@@ -10,12 +11,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Button } from '../ui/button'
-import { Input } from '../ui/input'
-import PulsatingDot from '../pulsating-dot'
+import { Button } from '@/components/ui/button'
+import PulsatingDot from '@/components/pulsating-dot'
 
 export default function Step4({setStep}: {setStep: Dispatch<SetStateAction<number>>}) {
   const [isCopied, setIsCopied] = useState(false)
+
+  const title = "Research Report on Tata Consultancy Services Ltd (TCS)"
 
   const reportSections = [
     { 
@@ -121,7 +123,7 @@ export default function Step4({setStep}: {setStep: Dispatch<SetStateAction<numbe
         <div className="space-y-3">
           <h1 className="text-lg font-bold flex items-center leading-none gap-1">
             <ReaderIcon className='text-primary' />
-            Research Report on Tata Consultancy Services Ltd (TCS)
+            {title}
           </h1>
           <Card className="relative px-4">
             <Accordion type="single" collapsible className="w-full">

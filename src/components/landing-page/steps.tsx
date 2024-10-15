@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Step1 from "@/components/landing-page/step1";
 import Step2 from "@/components/landing-page/step2";
 import Step3 from "@/components/landing-page/step3";
-import Step4 from "./step4";
+import Step4 from "@/components/landing-page/step4";
 import { useState } from "react";
 
 export default function Steps() {

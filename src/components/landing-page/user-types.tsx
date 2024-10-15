@@ -18,17 +18,16 @@ export default function UsersTypes() {
   }
 
   return (
-    <div className="mx-auto grid items-center md:grid-cols-2 gap-3">
+    <div className="mx-auto grid items-center md:grid-cols-2 gap-3 relative">
     <div className="flex flex-col gap-1 md:gap-2">
       <h1 className="text-3xl lg:text-4xl font-bold md:text-left">
-        Designed for All Financial Decision Makers
+        Designed for All
       </h1>
       <p className="text-lg md:text-xl md:text-left text-muted-foreground">
         Empowering investors, firms, and advisors with the tools for smarter, faster decision-making.
       </p>
     </div>
-    <div className="flex justify-end relative">
-        <div className="hidden md:inline-flex absolute m-auto blur-[250px] h-[8rem] right-[-200px] inset-0 bg-[#0b00ff]"></div>
+    <div className="flex justify-end">
         <div className="grid gap-3 w-full md:w-auto">
           {userTypes.map((item, index) => (
             <div
