@@ -8,11 +8,12 @@ import { Button } from "@/components/ui/button"
 import { Logo } from "@/components/ui/icons"
 import { ThemeToggle } from "@/components/theme-toggle";
 import { BlueGreenBackground } from "@/components/blue-green-background";
+import Link from "next/link"
 
-export default function Header() {
+export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false);
-    const [theme, setTheme] = useState('dark');
+    const [_theme, setTheme] = useState('dark');
 
     useEffect(() => {
         // Read the current theme from localStorage and set it in state
@@ -37,7 +38,9 @@ export default function Header() {
         <header className={`fixed top-0 left-0 right-0 z-50 shadow-md border-b border-border/20 font-medium text-xl ${isScrolled && 'bg-background'}`}>
             <div className="container mx-auto flex items-center justify-between py-4 max-w-screen-xl">
             <div className="flex items-center">
-                <Logo className="h-8" />
+                <Link href="/">
+                    <Logo className="h-8" />
+                </Link>
             </div>
             {/* <nav className="hidden md:flex space-x-4 border border-border/50 rounded-full py-3 px-8 items-center gap-5">
                 <Link href="#" className="hover:text-primary">Blog</Link><span className="w-1 h-1 bg-white rounded-full"></span>

@@ -1,17 +1,10 @@
 import Head from "next/head";
-import { Inter as FontSans } from 'next/font/google'
 
 import LandingPage from "@/components/landing-page";
-import { cn } from "@/lib/utils";
-
-const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans'
-})
 
 export default function Home() {
   return (
-    <div className={cn('font-sans antialiased', fontSans.variable)}>
+    <div >
       <Head>
         {/* Primary Meta Tags */}
         <title>Finyst | Revolutionizing Financial Research with AI</title>

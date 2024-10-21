@@ -1,25 +1,14 @@
-import { SunIcon, MoonIcon } from "@radix-ui/react-icons"
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 
 import { Button } from "@/components/ui/button"
-import { useEffect, useState } from "react";
+import { useTheme } from "next-themes"
 
-export function ThemeToggle() {
-    const [theme, setTheme] = useState('dark')
-
-  // Initialize theme from localStorage on component mount
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-    document.body.className = savedTheme;
-  }, []);
+export const ThemeToggle = () => {
+  const { theme, setTheme} = useTheme()
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.body.className = newTheme;
-    window.dispatchEvent(new Event('themeChange')); // Notify other components of theme change
-  };
+    theme === 'dark' ? setTheme('light') : setTheme('dark')
+  }
 
   return (
     <Button onClick={toggleTheme} variant="ghost" size="icon">
