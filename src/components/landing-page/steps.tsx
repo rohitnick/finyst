@@ -1,6 +1,6 @@
-import Image from "next/image";
-
 import { Card, CardContent } from "@/components/ui/card"
+
+import Image from "next/image";
 import Step1 from "@/components/landing-page/step1";
 import Step2 from "@/components/landing-page/step2";
 import Step3 from "@/components/landing-page/step3";

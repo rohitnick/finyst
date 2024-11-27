@@ -27,9 +27,7 @@ export default function Layout({ children }: { children: ReactElement }) {
         )}`}
       >
         <Navbar />
-        <main className="container relative mx-auto mt-32 md:mt-40 z-20 max-w-screen-xl">
-          {children}
-        </main>
+        {children}
         <Footer />
       </div>
     </ThemeProvider>

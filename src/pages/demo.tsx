@@ -1,12 +1,19 @@
-import PulsatingDot from "@/components/pulsating-dot"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { PaperPlaneIcon, GlobeIcon, FileTextIcon, BarChartIcon, PieChartIcon, ExclamationTriangleIcon } from "@radix-ui/react-icons"
-import { useState } from "react"
+import {
+  BarChartIcon,
+  ExclamationTriangleIcon,
+  FileTextIcon,
+  GlobeIcon,
+  PaperPlaneIcon,
+  PieChartIcon
+} from '@radix-ui/react-icons'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { useState } from 'react'
 
 interface OptionCardProps {
-  icon: React.ReactNode,
+  icon: React.ReactNode
   text: React.ReactNode
 }
 
@@ -19,7 +26,7 @@ export default function Demo() {
       text: 'Create a research report on Tata Consultancy Services Ltd (TCS)'
     },
     {
-      icon:  <FileTextIcon className="w-6 h-6" />,
+      icon: <FileTextIcon className="w-6 h-6" />,
       text: 'Balance Sheet Analysis of Trent Ltd. for the Financial Year 2023-2024'
     },
     {
@@ -36,7 +43,7 @@ export default function Demo() {
     }
   ]
 
-  const OptionCard = ({ icon, text}: OptionCardProps) => {
+  const OptionCard = ({ icon, text }: OptionCardProps) => {
     return (
       <Card className="flex items-center p-4 hover:bg-secondary transition-colors cursor-pointer">
         <div className="text-primary mr-4">{icon}</div>
@@ -46,37 +53,44 @@ export default function Demo() {
   }
 
   return (
-    <center>
-      <Card className="max-w-2xl">
-        <CardHeader>
-          <div>
-            <div className="relative">
-              <Input 
-                type="text" 
-                placeholder="Ask a question..." 
-                className="pr-20 border-primary focus:border-0"
-              />
-              <Button className="absolute right-0 top-0 h-full" variant="link">
-                <PaperPlaneIcon className="w-6 h-6" />
-              </Button>
+    <main className="container relative mx-auto mt-32 md:mt-40 z-20 max-w-screen-xl">
+      <center>
+        <Card className="max-w-2xl">
+          <CardHeader>
+            <div>
+              <div className="relative">
+                <Input
+                  type="text"
+                  placeholder="Ask a question..."
+                  className="pr-20 border-primary focus:border-0"
+                />
+                <Button
+                  className="absolute right-0 top-0 h-full"
+                  variant="link"
+                >
+                  <PaperPlaneIcon className="w-6 h-6" />
+                </Button>
+              </div>
+              <div className="w-full text-right">
+                <span className="text-sm text-muted-foreground">
+                  2000 Words
+                </span>
+              </div>
             </div>
-            <div className='w-full text-right'>
-              <span className="text-sm text-muted-foreground">2000 Words</span>
+          </CardHeader>
+          <CardContent>
+            <div className="w-full space-y-4 relative">
+              {exampleMessages.map((message, index) => (
+                <OptionCard
+                  key={index}
+                  icon={message.icon}
+                  text={message.text}
+                />
+              ))}
             </div>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <div className="w-full space-y-4 relative">
-            {exampleMessages.map((message, index) => (
-              <OptionCard
-                key={index}
-                icon={message.icon}
-                text={message.text}
-              />
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-    </center>
+          </CardContent>
+        </Card>
+      </center>
+    </main>
   )
 }
