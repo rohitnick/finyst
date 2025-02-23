@@ -1,5 +1,6 @@
 'use client'
 
+import AnimatedText from '../ui/animated-text'
 import { Card } from '@/components/ui/card'
 import FAQ from '@/components/landing-page/faq'
 import HeroAction from '@/components/landing-page/hero-action'
@@ -8,15 +9,22 @@ import Steps from '@/components/landing-page/steps'
 import UsersTypes from '@/components/landing-page/user-types'
 
 export default function LandingPage() {
+  // Partner, Assistant, Analysis, Sidekick, Tool, Platform
+  const words = ["Analysis", "Companion", "Assistant", "Navigator"];
+  const colors = [
+    "text-yellow-500",
+    "text-yellow-500",
+    "text-yellow-500",
+    "text-yellow-500",
+  ];
+
   return (
     <main className="container relative mx-auto mt-32 md:mt-40 z-20 max-w-screen-xl">
       <center>
         <section>
           <div className="flex items-center flex-col gap-4 md:gap-6">
-            {/* Partner, Assistant, Analysis, Sidekick, Tool, Platform */}
-            <h1 className="text-4xl md:text-5xl font-semibold mb-2 md:mb-3 max-w-[44rem]">
-              Financial Research Companion Powered by AI
-            </h1>
+            
+            <AnimatedText pretext="Financial Research" words={words} posttext="Powered by AI"  colors={colors} />
             <p className="text-lg md:text-xl mx-auto leading-relaxed text-accent-foreground/50 max-w-[50rem]">
               Finyst does the research for you, so you can spend less time
               stressing over it and more time focusing on the things that really
