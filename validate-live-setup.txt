@@ -1,0 +1,23 @@
+Validate this live setup.
+
+Stock
+Current price
+VWAP
+15 minute high
+15 minute low
+Volume behavior
+Structure description
+News catalyst
+
+Check only these gates:
+1. Catalyst still valid
+2. Flow supports direction
+3. Structure has room
+
+Return exactly one of:
+NO TRADE
+WATCH
+VALID TRADE
+
+If VALID TRADE, include entry, stop, target 1, and invalidation.
+Keep it short.
